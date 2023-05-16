@@ -14,7 +14,7 @@ python manage.py runserver 0.0.0.0:8000
 
 
 # Endpoints
-http://127.0.0.1:8000/api/
-http://127.0.0.1:8000/api/organisms/
-http://127.0.0.1:8000/api/salary/?name=&dni=&organism=6218&page=1
+- http://127.0.0.1:8000/api/
+- http://127.0.0.1:8000/api/organisms/
+- http://127.0.0.1:8000/api/salary/?name=&dni=&organism=6218&page=1
 
