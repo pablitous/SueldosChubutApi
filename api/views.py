@@ -149,7 +149,7 @@ def get_organisms(request):
                     option_text = option_element.get_text()  # Get the text content of the <option>
                     if not (option_value == '' or option_text == ''):
                         cant += 1
-                        data.append({'id:': option_value,'organismo:': str(option_text).strip()})
+                        data.append({'id': option_value,'organismo': str(option_text).strip()})
             else:
                 data.append({'error': 'Sorry, could´t find organisms.'})
 
