@@ -48,3 +48,37 @@ Endpoints
 -   <http://127.0.0.1:8000/api/>
 -   <http://127.0.0.1:8000/api/organisms/>
 -   <http://127.0.0.1:8000/api/salary/?name=&dni=&organism=6218&page=1>
+## API Reference
+
+#### Verify its working making a sum
+
+```http
+  GET /api/
+```
+#### Get all organisms
+
+```http
+  GET /api/organisms/
+```
+
+#### Get salary
+
+```http
+  GET /api/salary/?name=${name}&dni=${dni}&organism=${organism}&page=${page}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `name`    | `string` | Name of the person                |
+| `dni`     | `string` | Dni of the person                 |
+| `organism`| `int`    | Organism                          |
+| `page`| `int`    | **Not Required**. page            |
+
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+<p align="left"><a href="https://github.com/pablitous" target="_blank"><img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/pablitous?v=4&fit=cover&mask=circle" width="50px"  alt="pablitous"/>
