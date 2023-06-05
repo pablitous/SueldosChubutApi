@@ -42,37 +42,10 @@ To run the project as a standalone application, execute the following command:
 
 `python manage.py runserver 0.0.0.0:8000`
 
-Endpoints
+## Endpoints - Check Documentation
 ---------
 
--   <http://127.0.0.1:8000/api/>
--   <http://127.0.0.1:8000/api/organisms/>
--   <http://127.0.0.1:8000/api/salary/?name=&dni=&organism=6218&page=1>
-## API Reference
-
-#### Verify its working making a sum
-
-```http
-  GET /api/
-```
-#### Get all organisms
-
-```http
-  GET /api/organisms/
-```
-
-#### Get salary
-
-```http
-  GET /api/salary/?name=${name}&dni=${dni}&organism=${organism}&page=${page}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `name`    | `string` | Name of the person                |
-| `dni`     | `string` | Dni of the person                 |
-| `organism`| `int`    | Organism                          |
-| `page`| `int`    | **Not Required**. page            |
+-   <http://127.0.0.1:8000/api/v2/schema/docs>
 
 
 ## License
@@ -82,3 +55,8 @@ Endpoints
 ## Authors
 
 <p align="left"><a href="https://github.com/pablitous" target="_blank"><img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/pablitous?v=4&fit=cover&mask=circle" width="50px"  alt="pablitous"/>
+
+
+## Usefull commands
+`python manage.py spectacular --file schema.yml`
+

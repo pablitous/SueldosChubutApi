@@ -1,9 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from . import viewsets
 
-from . import views
+router = DefaultRouter()
+router.register(r'', viewsets.indexSet, basename='index')
+router.register(r'salary', viewsets.getSalarySet, basename='get_salary')
+router.register(r'organisms', viewsets.getOrganismsSet, basename='get_organisms')
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("salary/", views.get_salary, name="get_salary"),
-    path("organisms/", views.get_organisms, name="get_organisms"),
+    path('', include(router.urls)),
 ]

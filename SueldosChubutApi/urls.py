@@ -17,9 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from django.views.generic import RedirectView
+from api import urls as api_urls
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
+API_VERSION = 'v2'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include("api.urls")),
-    path('', lambda request: redirect('api/', permanent=True)),
+    path(f'api/{API_VERSION}/', include(api_urls)),
+    path(f'api/{API_VERSION}/schema/', SpectacularAPIView.as_view(), name="schema"),
+    path(f'api/{API_VERSION}/schema/docs', SpectacularSwaggerView.as_view(url_name="schema")),
+    #path('', RedirectView.as_view(url='api/v1/')),
+    path('', lambda request: redirect(f'api/{API_VERSION}/', permanent=True)),
 ]
+

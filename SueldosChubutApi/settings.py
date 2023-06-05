@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'rest_framework',
+    'drf_spectacular',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +56,19 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'api.middleware.ElapsedRequestTimeMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    # YOUR SETTINGS
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Chubut Salaries Api',
+    'DESCRIPTION': 'Get the Salaries from all the Employees of the province of Chubut.',
+    'VERSION': '1.0.0',
+
+}
+
 
 CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 CORS_ALLOW_CREDENTIALS = True
